@@ -4,7 +4,10 @@
 
   <PropertyGroup>
     <RepoPath>$(MSBuildThisFileDirectory)</RepoPath>
-    <DebugType>full</DebugType>
+    <DebugType>portable</DebugType>
+    <LangVersion>latest</LangVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)key.snk</AssemblyOriginatorKeyFile>
     <BinariesPath>$(RepoPath)Binaries\</BinariesPath>
     <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
     <OutputPath>$(BinariesPath)$(Configuration)\$(MSBuildProjectName)</OutputPath>
