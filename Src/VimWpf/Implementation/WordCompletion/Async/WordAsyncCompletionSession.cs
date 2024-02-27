@@ -40,7 +40,7 @@ namespace Vim.UI.Wpf.Implementation.WordCompletion.Async
             }
         }
 #endif
-#if VS_SPECIFIC_MAC
+#if VS_SPECIFIC_MAC || VS_SPECIFIC_WPF
         internal WordAsyncCompletionSession(IAsyncCompletionSession asyncCompletionSession)
         {
             _textView = asyncCompletionSession.TextView;

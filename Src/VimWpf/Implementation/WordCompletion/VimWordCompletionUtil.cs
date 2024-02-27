@@ -9,10 +9,8 @@ using Microsoft.FSharp.Core;
 using Microsoft.VisualStudio.Language.Intellisense;
 using Microsoft.VisualStudio.Editor;
 
-#if VS_SPECIFIC_2019 || VS_SPECIFIC_2022 || VS_SPECIFIC_MAC
 using Microsoft.VisualStudio.Language.Intellisense.AsyncCompletion;
 using Vim.UI.Wpf.Implementation.WordCompletion.Async;
-#endif
 
 namespace Vim.UI.Wpf.Implementation.WordCompletion
 {
@@ -39,14 +37,14 @@ namespace Vim.UI.Wpf.Implementation.WordCompletion
 #if VS_SPECIFIC_2019 || VS_SPECIFIC_2022
             IIntellisenseSessionStackMapService intellisenseSessionStackMapService,
             [Import(AllowDefault = true)] IVsEditorAdaptersFactoryService vsEditorAdapterFactoryService = null)
-#elif VS_SPECIFIC_MAC
+#elif VS_SPECIFIC_MAC || VS_SPECIFIC_WPF
             IIntellisenseSessionStackMapService intellisenseSessionStackMapService)
 #endif
         {
             _asyncCompletionBroker = asyncCompletionBroker;
 #if VS_SPECIFIC_2019 || VS_SPECIFIC_2022
             _asyncFactory = new WordAsyncCompletionSessionFactory(asyncCompletionBroker, vsEditorAdapterFactoryService);
-#elif VS_SPECIFIC_MAC
+#elif VS_SPECIFIC_MAC || VS_SPECIFIC_WPF
             _asyncFactory = new WordAsyncCompletionSessionFactory(asyncCompletionBroker);
 #endif
             _legacyFactory = new WordLegacyCompletionSessionFactory(completionBroker, intellisenseSessionStackMapService);

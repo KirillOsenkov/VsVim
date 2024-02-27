@@ -1,4 +1,4 @@
-﻿#if !VS_SPECIFIC_MAC
+﻿#if !VS_SPECIFIC_MAC && !VS_SPECIFIC_WPF
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;

@@ -4,7 +4,7 @@
 
   <PropertyGroup>
     <RepoPath>$(MSBuildThisFileDirectory)</RepoPath>
-    <DebugType>portable</DebugType>
+    <DebugType>embedded</DebugType>
     <LangVersion>latest</LangVersion>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)key.snk</AssemblyOriginatorKeyFile>

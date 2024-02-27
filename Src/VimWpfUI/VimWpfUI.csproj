@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyName>Vim.UI.Wpf</AssemblyName>
+    <NuGetVersionVSEditor>17.8.222</NuGetVersionVSEditor>
+    <DefineConstants>$(DefineConstants);VS_SPECIFIC_WPF</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VimCore\VimCore.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Language" Version="$(NuGetVersionVSEditor)" />
+    <PackageReference Include="Microsoft.VisualStudio.Language.IntelliSense" Version="$(NuGetVersionVSEditor)" />
+    <PackageReference Include="Microsoft.VisualStudio.Text.UI.Wpf" Version="$(NuGetVersionVSEditor)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+
+  <Import Project="..\VimWpf\VimWpf.projitems" Label="Shared" />
+
+</Project>

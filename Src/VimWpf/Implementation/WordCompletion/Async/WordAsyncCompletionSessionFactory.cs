@@ -38,7 +38,7 @@ namespace Vim.UI.Wpf.Implementation.WordCompletion.Async
             _asyncCompletionBroker = asyncCompletionBroker;
             _vsEditorAdaptersFactoryService = vsEditorAdaptersFactoryService;
         }
-#elif VS_SPECIFIC_MAC
+#elif VS_SPECIFIC_MAC || VS_SPECIFIC_WPF
         internal WordAsyncCompletionSessionFactory(
             IAsyncCompletionBroker asyncCompletionBroker)
         {
@@ -80,7 +80,7 @@ namespace Vim.UI.Wpf.Implementation.WordCompletion.Async
             asyncCompletionSession.OpenOrUpdate(completionTrigger, wordSpan.Start, CancellationToken.None);
 #if VS_SPECIFIC_2019 || VS_SPECIFIC_2022
             return new WordAsyncCompletionSession(asyncCompletionSession, _vsEditorAdaptersFactoryService);
-#elif VS_SPECIFIC_MAC
+#elif VS_SPECIFIC_MAC || VS_SPECIFIC_WPF
             return new WordAsyncCompletionSession(asyncCompletionSession);
 #endif
         }
