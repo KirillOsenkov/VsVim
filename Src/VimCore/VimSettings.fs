@@ -854,15 +854,15 @@ type internal EditorToSettingSynchronizer
                 IsLocal = false
             })
 
-        _settingList.Add(
-            {
-                EditorOptionKey = DefaultTextViewOptions.UseVisibleWhitespaceId.Name
-                GetEditorValue = SettingSyncData.GetBoolValueFunc DefaultTextViewOptions.UseVisibleWhitespaceId
-                VimSettingNames = [LocalSettingNames.ListName]
-                GetVimValue = SettingSyncData.GetSettingValueFunc LocalSettingNames.ListName true
-                SetVimValue = SettingSyncData.SetVimValueFunc LocalSettingNames.ListName true
-                IsLocal = true
-            })
+        //_settingList.Add(
+        //    {
+        //        EditorOptionKey = DefaultTextViewOptions.UseVisibleWhitespaceId.Name
+        //        GetEditorValue = SettingSyncData.GetBoolValueFunc DefaultTextViewOptions.UseVisibleWhitespaceId
+        //        VimSettingNames = [LocalSettingNames.ListName]
+        //        GetVimValue = SettingSyncData.GetSettingValueFunc LocalSettingNames.ListName true
+        //        SetVimValue = SettingSyncData.SetVimValueFunc LocalSettingNames.ListName true
+        //        IsLocal = true
+        //    })
 
     member x.StartSynchronizing (vimBuffer: IVimBuffer) settingSyncSource = 
         let properties = vimBuffer.TextView.Properties
