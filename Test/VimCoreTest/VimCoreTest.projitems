@@ -40,6 +40,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)EditorToSettingSynchronizerTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EditUtilTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ExpressionInterpreterTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ExtensionsTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FileSystemTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FoldDataTest.cs" />
@@ -146,6 +147,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)VisualSpanTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WordCompletionUtilTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WordUtilTest.cs" />
+    <Compile Include="..\VsVimSharedTest\WpfTextViewDisplay.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Todo.txt" />

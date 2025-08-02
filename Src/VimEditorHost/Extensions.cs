@@ -2,25 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using Vim.EditorHost;
+using System.Windows.Threading;
 using Microsoft.FSharp.Core;
 using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Editor;
+using Vim.EditorHost;
 using Vim.Extensions;
 using Vim.Interpreter;
 using Xunit;
+using Xunit.Sdk;
 using Expression = Vim.Interpreter.Expression;
 using Size = System.Windows.Size;
-using Microsoft.VisualStudio.Text.Tagging;
-using System.Threading;
-using System.Threading.Tasks;
-using Vim.UnitTest.Utilities;
-using Xunit.Sdk;
-using System.Windows.Threading;
-using System.Diagnostics;
-using Vim.UnitTest;
 
 namespace Vim.EditorHost
 {
@@ -2033,16 +2029,6 @@ namespace Vim.EditorHost
         public static SnapshotLineRange GetLineRange(this ITextBuffer textBuffer, int startLine, int endLine = -1)
         {
             return textBuffer.CurrentSnapshot.GetLineRange(startLine, endLine);
-        }
-
-        internal static void WaitForBackgroundToComplete<TData, TTag>(this AsyncTagger<TData, TTag> asyncTagger, TestableSynchronizationContext synchronizationContext)
-            where TTag : ITag
-        {
-            while (asyncTagger.AsyncBackgroundRequestData.IsSome())
-            {
-                synchronizationContext.RunAll();
-                Thread.Yield();
-            }
         }
 
         public static SnapshotLineRange GetLineRange(this ITextSnapshot snapshot, int startLine, int endLine = -1)

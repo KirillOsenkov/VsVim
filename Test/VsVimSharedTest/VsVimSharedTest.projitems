@@ -54,6 +54,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)VsKeyProcessorTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)VsVimHostTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)VsVimTestBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WpfTextViewDisplay.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Resources\VsCommands.txt" />

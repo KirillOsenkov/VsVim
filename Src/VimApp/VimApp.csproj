@@ -37,7 +37,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VimCore\VimCore.fsproj" />
-    <ProjectReference Include="..\VimTestUtils\VimTestUtils.csproj" />
     <Reference Include="Microsoft.VisualStudio.Setup.Configuration.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
