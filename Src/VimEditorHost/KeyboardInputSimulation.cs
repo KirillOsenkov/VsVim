@@ -1,14 +1,13 @@
-﻿using System;
+﻿#if VS_UNIT_TEST_HOST
+using System;
 using System.Collections.Generic;
 using System.Security.Permissions;
 using System.Windows;
 using System.Windows.Input;
 using Microsoft.VisualStudio.Text.Editor;
-using Moq;
 using Vim.EditorHost;
 using Vim.Extensions;
 using Vim.UI.Wpf.Implementation.Misc;
-using Vim.UnitTest;
 
 namespace Vim.UnitTest
 {
@@ -221,7 +220,7 @@ namespace Vim.UnitTest
 
         private readonly DefaultKeyboardDevice _defaultKeyboardDevice;
         private readonly DefaultInputController _defaultInputController;
-        private readonly Mock<PresentationSource> _presentationSource;
+        private readonly MockPresentationSource _presentationSource;
         private readonly IWpfTextView _wpfTextView;
 
         public KeyboardDevice KeyBoardDevice
@@ -240,8 +239,7 @@ namespace Vim.UnitTest
             _defaultKeyboardDevice = new DefaultKeyboardDevice(InputManager.Current);
             _wpfTextView = wpfTextView;
 
-            Castle.DynamicProxy.Generators.AttributesToAvoidReplicating.Add(typeof(UIPermissionAttribute));
-            _presentationSource = new Mock<PresentationSource>(MockBehavior.Strict);
+            _presentationSource = new MockPresentationSource();
         }
 
         public void Run(string text)
@@ -364,7 +362,7 @@ namespace Vim.UnitTest
         {
             var keyEventArgs = new KeyEventArgs(
                 _defaultKeyboardDevice,
-                _presentationSource.Object,
+                _presentationSource,
                 0,
                 key)
             {
@@ -452,3 +450,4 @@ namespace Vim.UnitTest
         }
     }
 }
+#endif

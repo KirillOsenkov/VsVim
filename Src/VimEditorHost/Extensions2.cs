@@ -147,10 +147,12 @@ namespace Vim.EditorHost
             return buffer.CurrentSnapshot.GetLineFromLineNumber(line);
         }
 
+#if VS_UNIT_TEST_HOST
         public static SnapshotSpan GetLineSpan(this ITextBuffer buffer, int lineNumber, int length)
         {
             return GetLineSpan(buffer, lineNumber, 0, length);
         }
+#endif
 
         public static SnapshotPoint GetPoint(this ITextBuffer buffer, int position)
         {

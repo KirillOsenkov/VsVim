@@ -1,5 +1,4 @@
-﻿#if VS_UNIT_TEST_HOST
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media;
 
 namespace Vim.UnitTest
@@ -25,4 +24,4 @@ namespace Vim.UnitTest
         }
     }
 }
-#endif
+

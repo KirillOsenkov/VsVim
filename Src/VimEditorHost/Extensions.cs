@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if VS_UNIT_TEST_HOST
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -2049,3 +2050,4 @@ namespace Vim.EditorHost
         public static string Substring(this string s, Span span) => s.Substring(span.Start, span.Length);
     }
 }
+#endif
