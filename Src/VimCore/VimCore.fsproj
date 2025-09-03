@@ -7,8 +7,9 @@
     <OtherFlags>--standalone</OtherFlags>
     <NoWarn>2011</NoWarn>
     <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
-    <DebugType>portable</DebugType>
+    <DebugType>embedded</DebugType>
     <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <ItemGroup>
     <None Include="README.md" />

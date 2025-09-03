@@ -5,6 +5,8 @@
     <AssemblyName>Vim.UI.Wpf</AssemblyName>
     <NuGetVersionVSEditor>17.8.222</NuGetVersionVSEditor>
     <DefineConstants>$(DefineConstants);VS_SPECIFIC_WPF</DefineConstants>
+    <!--<OutDir>C:\Users\kirillo\.nuget\packages\microsoft.ide.internal.vsvim\1.0.2\lib\net472\</OutDir>-->
+    <CopyLocalLockFileAssemblies>False</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
